@@ -8,7 +8,7 @@ import java.util.List;
 public class WordsService {
     public List<String> check(List<String> list) {
         String previous = "";
-        int quantity = 0;
+        int count = 0;
         for (int i = 0; i < list.size(); i++) {
             String current = list.get(i);
 
@@ -20,11 +20,11 @@ public class WordsService {
 
             if (i == 0 || current.substring(0, 1).equalsIgnoreCase(previous)) {
                 previous = current.substring(current.length() - 1);
-                quantity++;
+                count++;
             } else {
                 break;
             }
         }
-        return list.subList(0, quantity);
+        return list.subList(0, count);
     }
 }
